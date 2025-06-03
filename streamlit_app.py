@@ -84,3 +84,12 @@ if st.button("Exibir Gráfico"):
         plt.title("Notas Finais dos Alunos")
         plt.xticks(rotation=45)
         st.pyplot(plt)
+# Botão para download do CSV
+if os.path.exists(filename):
+    with open(filename, "rb") as f:
+        st.download_button(
+            label="📥 Baixar CSV com notas",
+            data=f,
+            file_name=filename,
+            mime="text/csv"
+        )
